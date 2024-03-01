@@ -1,0 +1,1 @@
+C:\Users\zilvi\source\repos\VSC_SakilaAPI\VSC_Sakila_React\vsc_sakila_react.client\obj\Debug\vsc_sakila_react.client.esproj.CoreCompileInputs.cache
