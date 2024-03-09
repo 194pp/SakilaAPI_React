@@ -10,13 +10,20 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@nextui-org/react": "^2.2.9",
-    "framer-motion": "^11.0.8",
+    "@nextui-org/react": "latest",
+    "@tanstack/react-query": "^5.25.0",
+    "framer-motion": "latest",
+    "localforage": "^1.10.0",
+    "match-sorter": "^6.3.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^5.0.1",
+    "react-router-dom": "^6.22.2",
+    "sort-by": "^1.2.0",
     "tailwind-merge": "^2.2.1"
   },
   "devDependencies": {
+    "@tanstack/eslint-plugin-query": "^5.20.1",
     "@types/react": "^18.2.56",
     "@types/react-dom": "^18.2.19",
     "@typescript-eslint/eslint-plugin": "^7.0.2",

@@ -8,10 +8,9 @@ import {
   Pagination,
 } from "@nextui-org/react";
 import { twMerge } from "tailwind-merge";
+import { DEFAULT_PAGE } from "../../constants/pagination-state";
 
-const DEFAULT_PAGE = 1;
-
-export const CustomTable = (props: TDefaultTableProps) => {
+export const DefaultTable = (props: TDefaultTableProps) => {
   const {
     headers,
     data,
@@ -23,7 +22,10 @@ export const CustomTable = (props: TDefaultTableProps) => {
 
   return (
     <Table
-      className={twMerge("w-full", className)}
+      classNames={{
+        base: twMerge("", className),
+        td: "px-2 py-1",
+      }}
       bottomContent={
         <div className="flex w-full justify-center">
           <Pagination
@@ -32,7 +34,16 @@ export const CustomTable = (props: TDefaultTableProps) => {
             showShadow
             page={page}
             total={total}
+            initialPage={1}
+            siblings={5}
             onChange={onPageChange}
+            classNames={{
+              // wrapper:
+              // "gap-0 overflow-visible h-8 rounded border border-divider",
+              // item: "w-8 h-8 text-small rounded-none bg-transparent",
+              cursor:
+                "bg-gradient-to-b from-primary to-default-800 dark:from-default-300 dark:to-secondary text-white font-bold",
+            }}
           />
         </div>
       }
@@ -71,11 +82,13 @@ export type TDefaultTableProps = {
     dataNode?: React.ReactNode;
     className?: string;
   }[][];
-  paginator?: {
-    onPageChange?: (page: number) => void;
-    total?: number;
-    page?: number;
-  };
+  paginator?: TPaginatorProps;
   noDataMessage?: string;
   className?: string;
+};
+
+export type TPaginatorProps = {
+  onPageChange?: (page: number) => void;
+  total?: number;
+  page?: number;
 };
